@@ -1,0 +1,28 @@
+# Maven
+target/
+!target/course-management-system-*.jar
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Other
+README.md
+*.md
+.env
+.env.local
+.env.production
