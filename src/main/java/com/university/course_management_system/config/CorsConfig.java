@@ -11,11 +11,15 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOrigins(
-                        "http://localhost:3000",
-                        "https://localhost:3000",
-                        "https://*.railway.app",
-                        "https://*.vercel.app",
-                        "https://*.netlify.app"
+                    "http://localhost:3000",
+                    "https://localhost:3000",
+                    "https://university-cms-frontend.vercel.app",
+                    "https://university-cms-frontend-git-main-sakuna-dewanarayanas-projects.vercel.app",
+                    "https://university-cms-frontend-3i2ll9pbu-sakuna-dewanarayanas-projects.vercel.app",
+                    "https://university-cms-frontend-emwa-he2arshaw.vercel.app",
+                    "https://*.vercel.app",
+                    "https://*.railway.app",
+                    "https://*.netlify.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
