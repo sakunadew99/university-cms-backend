@@ -37,8 +37,13 @@ public class RegistrationService {
         Registration registration = registrationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Registration not found with id: " + id));
 
-        registration.setStatus(registrationDetails.getStatus());
-        registration.setGrade(registrationDetails.getGrade());
+        // ✅ update grade + status
+        if (registrationDetails.getStatus() != null) {
+            registration.setStatus(registrationDetails.getStatus());
+        }
+        if (registrationDetails.getGrade() != null) {
+            registration.setGrade(registrationDetails.getGrade());
+        }
 
         return registrationRepository.save(registration);
     }
