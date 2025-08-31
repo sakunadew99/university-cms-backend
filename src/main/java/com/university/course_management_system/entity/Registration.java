@@ -11,8 +11,6 @@ public class Registration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Keep these WITHOUT @JsonIgnore so frontend can access student/course details
-    // But the Student and Course entities have @JsonIgnore on their registrations list
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
     private Student student;
@@ -27,6 +25,8 @@ public class Registration {
     @Enumerated(EnumType.STRING)
     private RegistrationStatus status;
 
+    // ✅ Result field (grade/marks)
+    @Column(name = "grade")
     private String grade;
 
     @PrePersist
@@ -37,7 +37,6 @@ public class Registration {
         }
     }
 
-    // Constructors
     public Registration() {}
 
     public Registration(Student student, Course course) {
